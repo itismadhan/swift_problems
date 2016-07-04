@@ -18,3 +18,23 @@ extension String {
         return false
     }
 }
+
+let list = ["mad", "dam", "adm"]
+
+func doesListContainAnagrams(list:Array<String>) -> Bool! {
+    if list.count < 2 {
+        return false
+    }
+    
+    for (index, element) in list.enumerate() {
+        if index - 1  >= 0 {
+            if !element.isAnagram(of: list[index - 1]) {
+                return false
+            }
+        }
+    }
+    
+    return true
+}
+
+print(doesListContainAnagrams(list))
