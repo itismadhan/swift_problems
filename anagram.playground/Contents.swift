@@ -17,7 +17,26 @@ extension String {
         
         return false
     }
+    
+    func isPalindrome() -> Bool {
+        let mid = self.characters.count/2
+        var i = 0
+        var j = self.characters.count - 1
+        
+        while i <= mid && j > mid {
+            if self[self.startIndex.advancedBy(i)] != self[self.startIndex.advancedBy(j)] {
+                return false
+            }
+            
+            i += 1
+            j -= 1
+        }
+        
+        return true
+    }
 }
+
+"madam".isPalindrome()
 
 let list = ["mad", "dam", "adm"]
 
